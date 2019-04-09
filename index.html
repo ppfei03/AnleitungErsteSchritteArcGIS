@@ -7,44 +7,93 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+      // Add smooth scrolling --> Credits: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+      $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+
+              // Make sure this.hash has a value before overriding default behavior
+              if (this.hash !== "") {
+                  // Prevent default anchor click behavior
+                  event.preventDefault();
+
+                  // Store hash
+                  var hash = this.hash;
+
+                  // Using jQuery's animate() method to add smooth page scroll
+                  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 800, function(){
+
+                      // Add hash (#) to URL when done scrolling (default click behavior)
+                      window.location.hash = hash;
+                  });
+              } // End if
+          });
+      });
+  </script>
   <style>
-  body {background:lightgrey}
+    body {background:lightgrey}
   </style>
 </head>
 <body>
-  
+
 <div class="container">
 
   <h1>Anleitung</h1>
   <h5>Erste Schritte in ArcGis Pro</h5>
-  <h2>Erstellung eines neuen ArcGis Pro Projekts</h2>
+
+  <h2>Inhaltsverzeichnis</h2>
+
+  <ul>
+    <li><a href="#newProject">Erstellung eines neuen Projekts</a></li>
+    <li><a href="#save">Speichern & Teilen eines Projekts</a></li>
+    <li><a href="#folderConnection">Erstellen einer Folder Connection</a></li>
+    <li><a href="#extract">Ordner Extrahieren</a></li>
+  </ul>
+
+
+  <h2 id="newProject">Erstellung eines neuen ArcGis Pro Projekts</h2>
 
   <h3>(Neuer Ordner für Projekte)</h3>
-    <p>Erstelle einen Ordner für alle künftigen Projekte. Dieser sollte sich auf einem der privaten Laufwerke (U: oder S:) oder wahlweise auf einem USB-Stick befinden. </p>
-	<a target="_blank" href="Bild1.jpg">
-	<img src="Bild1.jpg" alt="Bild1" style="width:100%;max-width:800px">
-	</a>
+  <p>Erstelle einen Ordner für alle künftigen Projekte. Dieser sollte sich auf einem der privaten Laufwerke (U: oder S:) oder wahlweise auf einem USB-Stick befinden. </p>
+  <a target="_blank" href="Bild1.jpg">
+    <img src="Bild1.jpg" alt="Bild1" style="width:100%;max-width:800px">
+  </a>
 
   <h3>Neues Projekt anlegen</h3>
   <p>Öffne ArcGis Pro und erstelle ein neues Projekt (Blank) und wähle den gewünschten Speicherort für dieses Projekt aus. In dem gewählten Speicherort wird ein neuer Ordner für das Projekt angelegt und alle zukünftig erzeugten Daten werden in diesem gespeichert.</p>
   <a target="_blank" href="Bild2.jpg">
-  <img src="Bild2.jpg" alt="Bild2" style="width:100%;max-width:800px">
-</a>	<p>Nach der Erzeugung des Projekts solltet Ihr die Speicherorte kontrollieren, z.B. die der „Databases“. </p>
-<a target="_blank" href="Bild3.jpg">
-  <img src="Bild3.jpg" alt="Bild3" style="width:100%;max-width:800px">
-</a>
-  <h3>Anpassung Koordinatensystem</h3>
- <p>Bevor mit der Arbeit begonnen wird, sollte das passende Koordinatensystem für die „map“ festgelegt werden. Das System richtet sich u.a. an die Anforderungen des Projekts aber auch an die später verwendeten Daten. Wir wählen, solange nichts anderes vorgegeben, das System <b>„ETRS 1989 UTM Zone 32N 7stellen“</b>.</p>
-<a target="_blank" href="Bild4.jpg">
-  <img src="Bild4.jpg" alt="Bild4" style="width:100%;max-width:800px">
+    <img src="Bild2.jpg" alt="Bild2" style="width:100%;max-width:800px">
+  </a>	<p>Nach der Erzeugung des Projekts solltet Ihr die Speicherorte kontrollieren, z.B. die der „Databases“. </p>
+  <a target="_blank" href="Bild3.jpg">
+    <img src="Bild3.jpg" alt="Bild3" style="width:100%;max-width:800px">
   </a>
-    
-  
-  <h2>Speichern & Teilen eines Projekts</h2>
+  <h3>Anpassung Koordinatensystem</h3>
+  <p>Bevor mit der Arbeit begonnen wird, sollte das passende Koordinatensystem für die „map“ festgelegt werden. Das System richtet sich u.a. an die Anforderungen des Projekts aber auch an die später verwendeten Daten. Wir wählen, solange nichts anderes vorgegeben, das System <b>„ETRS 1989 UTM Zone 32N 7stellen“</b>.</p>
+  <a target="_blank" href="Bild4.jpg">
+    <img src="Bild4.jpg" alt="Bild4" style="width:100%;max-width:800px">
+  </a>
+
+  <h2 id="save">Speichern & Teilen eines Projekts</h2>
   <p>Projekte können ganz einfach geteilt und auch so sicher gespeichert werden. Diese Funktion ist eine Erweiterung des normalen Speicherns, sie speichert die gesamten Daten im Projekt und verpackt sie zu einem s.g. „Project Package“. Diese Datei kann daher als Sicherung aber auch zum Teilen des Projekts dienen.</p>
-<a target="_blank" href="Bild5.jpg">
-  <img src="Bild5.jpg" alt="Bild5" style="width:100%;max-width:800px">
-</a>  
+  <a target="_blank" href="Bild5.jpg">
+    <img src="Bild5.jpg" alt="Bild5" style="width:100%;max-width:800px">
+  </a>
+
+  <h2 id="folderConnection">Erstellen einer Folder Connection</h2>
+  <p>Um neue Daten, wie zum Beispiel Shapefiles in ArcGIS Pro einzuladen, muss eine "Folder Connection" erstellt werden. Hierzu muss im Catalog über einen Rechtsklick auf Folders "Add Folder Connection" ausgewählt werden. <b> Achtung: Sollten die Daten im .zip Format vorliegen, müssen diese vorher extrahiert werden.</b></p>
+  <a target="_blank" href="Bild6.JPG">
+    <img src="Bild6.JPG" alt="Bild6" style="width:100%;max-width:800px">
+  </a>
+
+  <h2 id="extract">Ordner Extrahieren</h2>
+  <p>Große Datenmengen liegen häufig im ".zip" Format vor. Um mit diesen arbeiten zu können, müssen diese extrahiert werden. Dies geschieht über einen Rechtsklick auf den entsprechenden Ordner und der Auswahl "Alle extrahieren". Anschließend muss der Ort angegeben werden, wo der entpackte Ordner gespeichert werden soll."</p>
+  <a target="_blank" href="Bild7.JPG">
+    <img src="Bild7.JPG" alt="Bild7" style="width:100%;max-width:800px">
+  </a>
 </div>
 
 </body>
