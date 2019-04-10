@@ -1,110 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Anleitung</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script>
-      // Add smooth scrolling --> Credits: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-      $(document).ready(function(){
-          // Add smooth scrolling to all links
-          $("a").on('click', function(event) {
+    <title>Anleitung</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        // Add smooth scrolling --> Credits: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
 
-              // Make sure this.hash has a value before overriding default behavior
-              if (this.hash !== "") {
-                  // Prevent default anchor click behavior
-                  event.preventDefault();
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                  // Store hash
-                  var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-                  // Using jQuery's animate() method to add smooth page scroll
-                  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                  $('html, body').animate({
-                      scrollTop: $(hash).offset().top
-                  }, 800, function(){
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
 
-                      // Add hash (#) to URL when done scrolling (default click behavior)
-                      window.location.hash = hash;
-                  });
-              } // End if
-          });
-      });
-  </script>
-  <style>
-    body {background:lightgrey}
-  </style>
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+    <style>
+        body {
+            background: lightgrey
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
 
-  <h1>Anleitung</h1>
-  <h5>Erste Schritte in ArcGis Pro</h5>
+    <h1>Anleitung</h1>
+    <h5>Erste Schritte in ArcGis Pro</h5>
 
-  <h2>Inhaltsverzeichnis</h2>
+    <h2>Inhaltsverzeichnis</h2>
 
-  <ul>
-    <li><a href="#newProject">Erstellung eines neuen Projekts</a></li>
-    <li><a href="#save">Speichern & Teilen eines Projekts</a></li>
-    <li><a href="#folderConnection">Erstellen einer Folder Connection</a></li>
-    <li><a href="#extract">Ordner Extrahieren</a></li>
-  </ul>
+    <ul>
+        <li><a href="#newProject">Erstellung eines neuen Projekts</a></li>
+        <li><a href="#save">Speichern & Teilen eines Projekts</a></li>
+        <li><a href="#basisFunction">Basisfunktionen</a>
+            <ul>
+                <li><a href="#basisFunctionFolderConnection">Erstellen einer Folder Connection (Ordnerverbindung)</a>
+                </li>
+                <li><a href="#basisFunctionDataToArcGIS">Daten in ArcGIS Pro hinzufügen</a></li>
+                <li><a href="#basisFunctionFileGDB">Erstellen einer FileGeodatabase</a></li>
+                <li><a href="#basisFunctionFeatureClass">Erstellen einer FeatureClass</a></li>
+                <li><a href="#basisFunctionAttribute">FeatureClass - Attribute hinzufügen</a></li>
+                <li><a href="#basisFunctionEdit">Editieren</a></li>
+            </ul>
+        </li>
+        <li><a href="#extract">Ordner Extrahieren</a></li>
+    </ul>
 
 
-  <h2 id="newProject">Erstellung eines neuen ArcGis Pro Projekts</h2>
+    <h2 id="newProject">Erstellung eines neuen ArcGis Pro Projekts</h2>
 
-  <h3>(Neuer Ordner für Projekte)</h3>
-  <p>Erstelle einen Ordner für alle künftigen Projekte. Dieser sollte sich auf einem der privaten Laufwerke (U: oder S:) oder wahlweise auf einem USB-Stick befinden. </p>
-  <a target="_blank" href="Bild1.jpg">
-    <img src="Bild1.jpg" alt="Bild1" style="width:100%;max-width:800px">
-  </a>
+    <h3>(Neuer Ordner für Projekte)</h3>
+    <p>Erstelle einen Ordner für alle künftigen Projekte. Dieser sollte sich auf einem der privaten Laufwerke (U: oder
+        S:) oder wahlweise auf einem USB-Stick befinden. </p>
+    <a target="_blank" href="Bild1.jpg">
+        <img src="Bild1.jpg" alt="Bild1" style="width:100%;max-width:800px">
+    </a>
 
-  <h3>Neues Projekt anlegen</h3>
-  <p>Öffne ArcGis Pro und erstelle ein neues Projekt (Blank) und wähle den gewünschten Speicherort für dieses Projekt aus. In dem gewählten Speicherort wird ein neuer Ordner für das Projekt angelegt und alle zukünftig erzeugten Daten werden in diesem gespeichert.</p>
-  <a target="_blank" href="Bild2.jpg">
-    <img src="Bild2.jpg" alt="Bild2" style="width:100%;max-width:800px">
-  </a>	<p>Nach der Erzeugung des Projekts solltet Ihr die Speicherorte kontrollieren, z.B. die der „Databases“. </p>
-  <a target="_blank" href="Bild3.jpg">
-    <img src="Bild3.jpg" alt="Bild3" style="width:100%;max-width:800px">
-  </a>
-  
-  <h3>Map einfügen</h3>
-  <p>Bevor man mit der Arbeit beginnen kann, muss man eine sogenannte "Map" einfügen. Dies ist über "Insert" -> "New Map" möglich.</p>
-  <a target="_blank" href="Bild8.jpg">
-    <img src="Bild8.jpg" alt="Bild8" style="width:100%;max-width:800px">
-  </a>
-  
-  <h3>Anpassung Koordinatensystem</h3>
-  <p>Bevor mit dem Einladen von Geodaten begonnen wird, sollte das passende Koordinatensystem für die „Map“ festgelegt werden. Das System richtet sich u.a. an die Anforderungen des Projekts aber auch an die später verwendeten Daten. Wir wählen, solange nichts anderes vorgegeben, das System <b>„ETRS 1989 UTM Zone 32N (EPSG: 25832)“</b>.</p>
-  <a target="_blank" href="Bild9.jpg">
-    <img src="Bild9.jpg" alt="Bild9" style="width:100%;max-width:800px">
-  </a>
+    <h3>Neues Projekt anlegen</h3>
+    <p>Öffne ArcGis Pro und erstelle ein neues Projekt (Blank) und wähle den gewünschten Speicherort für dieses Projekt
+        aus. In dem gewählten Speicherort wird ein neuer Ordner für das Projekt angelegt und alle zukünftig erzeugten
+        Daten werden in diesem gespeichert.</p>
+    <a target="_blank" href="Bild2.jpg">
+        <img src="Bild2.jpg" alt="Bild2" style="width:100%;max-width:800px">
+    </a>
+    <p>Nach der Erzeugung des Projekts solltet Ihr die Speicherorte kontrollieren, z.B. die der „Databases“. </p>
+    <a target="_blank" href="Bild3.jpg">
+        <img src="Bild3.jpg" alt="Bild3" style="width:100%;max-width:800px">
+    </a>
 
-  <h2 id="save">Speichern & Teilen eines Projekts</h2>
-  <p>Es gibt mehrere Varianten das Projekt zu speichern. Einerseits klassisch über "Projects" -> "Save" bzw. "Save As".</p>
-  <a target="_blank" href="Bild10.jpg">
-    <img src="Bild10.jpg" alt="Bild10" style="width:100%;max-width:800px">
-  </a>
-  <p>Andererseits können Projekte ganz einfach geteilt und auch so sicher gespeichert werden. Diese Funktion ist eine Erweiterung des normalen Speicherns, sie speichert die gesamten Daten im Projekt und verpackt sie zu einem s.g. „Project Package“.Dies bedeutet, dass das Projekt inkl. der verwendeten Daten gespeichert wird. Diese Datei kann daher als Sicherung aber auch zum Teilen des Projekts dienen. Es eignet sich u.a. für den Export auf einen USB-Stick.</p>
-  <a target="_blank" href="Bild5.jpg">
-    <img src="Bild5.jpg" alt="Bild5" style="width:100%;max-width:800px">
-  </a>
+    <h3>Map einfügen</h3>
+    <p>Bevor man mit der Arbeit beginnen kann, muss man eine sogenannte "Map" einfügen. Dies ist über "Insert" -> "New
+        Map" möglich.</p>
+    <a target="_blank" href="Bild8.jpg">
+        <img src="Bild8.jpg" alt="Bild8" style="width:100%;max-width:800px">
+    </a>
 
-  <h2 id="folderConnection">Erstellen einer Folder Connection</h2>
-  <p>Um neue Daten, wie zum Beispiel Shapefiles in ArcGIS Pro einzuladen, muss eine "Folder Connection" erstellt werden. Hierzu muss im Catalog über einen Rechtsklick auf Folders "Add Folder Connection" ausgewählt werden. <b> Achtung: Sollten die Daten im .zip Format vorliegen, müssen diese vorher extrahiert werden.</b></p>
-  <a target="_blank" href="Bild6.JPG">
-    <img src="Bild6.JPG" alt="Bild6" style="width:100%;max-width:800px">
-  </a>
+    <h3>Anpassung Koordinatensystem</h3>
+    <p>Bevor mit dem Einladen von Geodaten begonnen wird, sollte das passende Koordinatensystem für die „Map“ festgelegt
+        werden. Das System richtet sich u.a. an die Anforderungen des Projekts aber auch an die später verwendeten
+        Daten. Wir wählen, solange nichts anderes vorgegeben, das System <b>„ETRS 1989 UTM Zone 32N (EPSG: 25832)“</b>.
+    </p>
+    <a target="_blank" href="Bild9.jpg">
+        <img src="Bild9.jpg" alt="Bild9" style="width:100%;max-width:800px">
+    </a>
 
-  <h2 id="extract">Ordner Extrahieren</h2>
-  <p>Große Datenmengen liegen häufig im ".zip" Format vor. Um mit diesen arbeiten zu können, müssen diese extrahiert werden. Dies geschieht über einen Rechtsklick auf den entsprechenden Ordner und der Auswahl "Alle extrahieren". Anschließend muss der Ort angegeben werden, wo der entpackte Ordner gespeichert werden soll.</p>
-  <a target="_blank" href="Bild7.JPG">
-    <img src="Bild7.JPG" alt="Bild7" style="width:100%;max-width:800px">
-  </a>
+    <h2 id="save">Speichern & Teilen eines Projekts</h2>
+    <p>Es gibt mehrere Varianten das Projekt zu speichern. Einerseits klassisch über "Projects" -> "Save" bzw. "Save
+        As".</p>
+    <a target="_blank" href="Bild10.jpg">
+        <img src="Bild10.jpg" alt="Bild10" style="width:100%;max-width:800px">
+    </a>
+    <p>Andererseits können Projekte ganz einfach geteilt und auch so sicher gespeichert werden. Diese Funktion ist eine
+        Erweiterung des normalen Speicherns, sie speichert die gesamten Daten im Projekt und verpackt sie zu einem s.g.
+        „Project Package“.Dies bedeutet, dass das Projekt inkl. der verwendeten Daten gespeichert wird. Diese Datei kann
+        daher als Sicherung aber auch zum Teilen des Projekts dienen. Es eignet sich u.a. für den Export auf einen
+        USB-Stick.</p>
+    <a target="_blank" href="Bild5.jpg">
+        <img src="Bild5.jpg" alt="Bild5" style="width:100%;max-width:800px">
+    </a>
+
+    <div>
+        <h2 id="basisFunction">Basisfunktionen</h2>
+
+        <div>
+            <h3 id="basisFunctionFolderConnection">Erstellen einer Folder Connection (Ordnerverbindung)</h3>
+
+            <p>Folder Connection“ ermöglicht einen schnelle Zugriff auf die Daten.<br>
+                <b>Schritt 1:</b><br>
+                Öffnen des „Catalog-Fensters“</p>
+            <a target="_blank" href="Folder_1.png">
+                <img src="Folder_1.png" alt="Folder_1" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Schritt 2:</b><br>
+                Rechtsklick auf „Folders“ und dann „Add new Folder Connection“</p>
+            <a target="_blank" href="Folder_2.png">
+                <img src="Folder_2.png" alt="Folder_2" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Schritt 3:</b> <br>
+                Markieren des Ordners und anschließender Klick auf „OK“.</p>
+            <a target="_blank" href="Folder_3.png">
+                <img src="Folder_3.png" alt="Folder_3" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p>Tipp: <br>
+                Am besten immer den Projektordner markieren und nicht „tief“ in den Ordner
+                navigieren. So kann man am effektivsten auf alle Daten zugreifen.</p>
+        </div>
+
+        <div>
+            <h3 id="basisFunctionDataToArcGIS">Daten in ArcGIS Pro hinzufügen</h3>
+
+            <b>Schritt 1:</b><br>
+            Hinzufügen von Daten über „Add Data“ (zu finden im „Map“-Reiter).
+            </p>
+            <a target="_blank" href="Einladen.png">
+                <img src="Einladen.png" alt="Einladen" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p>Alternative: <br>
+
+                Hinzufügen von Daten per Drag & Drop aus dem „Catalog“</p>
+        </div>
+
+        <div>
+            <h3 id="basisFunctionFileGDB">Erstellen einer FileGeodatabase</h3>
+
+            <p>„FileGeodatabase“: lokale Geodatenbank zur Datenspeicherung.<br>
+                <b>Schritt 1:</b><br>
+                Im Catalog - Rechtsklick auf den Ordner in dem die FileGeodatabase angelegt werden soll ► „New“ ►
+                „FileGeodatabase“.
+            </p>
+            <a target="_blank" href="GDB_1.png">
+                <img src="GDB_1.png" alt="GDB_1" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Schritt 2:</b><br>
+                Vergeben eines eindeutigen Namens.
+            </p>
+            <a target="_blank" href="GDB_2.png">
+                <img src="GDB_2.png" alt="GDB_2" style="width:100%;max-width:800px">
+            </a><br><br>
+
+        </div>
+
+        <div>
+            <h3 id="basisFunctionFeatureClass">Erstellen einer FeatureClass</h3>
+
+            <p>„FeatureClass“: Homogene Sammlungen häufig verwendeter Features (Fachobjekt, z.B. ein Baum) mit derselben
+                räumlichen Repräsentation (FeatureClass z.B. „Baumkataster“).<br>
+                <b>Schritt 1:</b><br>
+                Rechtsklick auf die Geodatenbank in dem die FeatureClass erstellt werden
+                soll ► „New“ ► „FeatureClass“.
+            </p>
+            <a target="_blank" href="FC_1.png">
+                <img src="FC_1.png" alt="FC_1" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Schritt 2:</b><br>
+                Eintragen des Namens sowie des Geometrie-Typs.
+            </p>
+            <br>
+            <p><b>Schritt 3:</b><br>
+                Auswahl des Koordinatensystems.
+            </p>
+            <a target="_blank" href="FC_2.png">
+                <img src="FC_2.png" alt="FC_2" style="width:100%;max-width:350px">
+            </a><br><br>
+            <p><b>Schritt 4:</b><br>
+                Erstellung der FeatureClass durch Klick auf „Run“ durchführen.
+            </p>
+
+        </div>
+        <div>
+            <h3 id="basisFunctionAttribute">FeatureClass - Attribute hinzufügen</h3>
+
+            <p>
+                <b>Schritt 1:</b><br>
+                Rechtsklick auf die angelegte FeatureClass ►“Design“ ► „Fields“.
+
+            </p>
+            <a target="_blank" href="FC_3.png">
+                <img src="FC_3.png" alt="FC_3" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Alternativ:</b>
+                Attributtabelle der angelegten FeatureClass öffnen und auf „Add“ klicken.
+            </p>
+            <a target="_blank" href="FC_4.png">
+                <img src="FC_4.png" alt="FC_4" style="width:100%;max-width:800px">
+            </a>
+            <br><br>
+            <p><b>Schritt 2:</b><br>
+                In „Field Name“ Zelle auswählen und Name für Attribut vergeben, danach den
+                Datentyp auswählen.
+            </p>
+            <a target="_blank" href="FC_5.png">
+                <img src="FC_5.png" alt="FC_5" style="width:100%;max-width:800px">
+            </a><br><br>
+            <p><b>Schritt 3:</b><br>
+                Die angelegten Attribute speichern („Fields“-Reiter ► „Save“).
+            </p>
+            <a target="_blank" href="FC_6.png">
+                <img src="FC_6.png" alt="FC_6" style="width:100%;max-width:800px">
+            </a><br><br>
+
+        </div>
+        <div>
+            <h3 id="basisFunctionEdit">Editieren</h3>
+
+            <p>
+                <b>Schritt 0:</b><br>
+                ggf. Aktivieren der Toolbar über „Projects“ ► „Options“ ► „Customize the
+                Ribbon“ (siehe https://pro.arcgis.com/de/pro-app/get-started/customize-theribbon.htm).
+            </p>
+            <a target="_blank" href="editieren_1.png">
+                <img src="editieren_1.png" alt="editieren_1" style="width:100%;max-width:800px">
+            </a>
+            <br><br>
+            <p><b>Schritt 1:</b><br>
+                Editieren der Feature-<b>Geometrien</b>.
+
+            </p>
+            <a target="_blank" href="editieren_2.png">
+                <img src="editieren_2.png" alt="editieren_2" style="width:100%;max-width:800px">
+            </a>
+            <br><br>
+            <p><b>Schritt 2:</b><br>
+                Editieren der Feature-<b>Attribute</b>.
+
+            </p>
+            <a target="_blank" href="editieren_3.png">
+                <img src="editieren_3.png" alt="editieren_3" style="width:100%;max-width:800px">
+            </a>
+            <br><br>
+            <p><b>Schritt 3:</b><br>
+                Editiersitzung speichern und beenden.
+            </p>
+            <a target="_blank" href="editieren_4.png">
+                <img src="editieren_4.png" alt="editieren_4" style="width:100%;max-width:800px">
+            </a><br><br>
+
+        </div>
+
+
+    </div>
+
+    <h2 id="extract">Ordner Extrahieren</h2>
+    <p>Große Datenmengen liegen häufig im ".zip" Format vor. Um mit diesen arbeiten zu können, müssen diese extrahiert
+        werden. Dies geschieht über einen Rechtsklick auf den entsprechenden Ordner und der Auswahl "Alle extrahieren".
+        Anschließend muss der Ort angegeben werden, wo der entpackte Ordner gespeichert werden soll.</p>
+    <a target="_blank" href="Bild7.JPG">
+        <img src="Bild7.JPG" alt="Bild7" style="width:100%;max-width:800px">
+    </a>
 </div>
 
 </body>
