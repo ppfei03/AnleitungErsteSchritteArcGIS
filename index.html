@@ -78,6 +78,7 @@
                     <li><a href="#basisFunctionFeatureClass">Erstellen einer FeatureClass</a></li>
                     <li><a href="#basisFunctionAttribute">FeatureClass - Attribute hinzufügen</a></li>
                     <li><a href="#basisFunctionEdit">Editieren</a></li>
+                    <li><a href="#basisFunctionGeoreference">Georeferenzierung</a></li>
                 </ul>
             </li>
             <li><a href="#extract">Ordner Extrahieren</a></li>
@@ -351,7 +352,59 @@
             <br>
             <br>
         </div>
-
+        <div>
+            <h3 id="basisFunctionGeoreference">Georeferenzierung</h3>
+            <p>
+                <b>Schritt 1:</b><br>
+                ein unreferenziertes Bild bzw. Karte als Ausgangsdatenbestand hinzufügen.
+            </p>
+            <br>
+            <br>
+            <p>
+                <b>Schritt 2:</b><br>
+                den Ausgangsdatenbestand im "Content"-Fenster auswählen, sodass dieser markiert ist. Nur in diesem Zustand lässt sich das folgende Tool ausführen, sonst ist es ausgegraut.
+            </p>
+            <br>
+            <br>
+            <p>
+                <b>Schritt 3:</b><br>
+                Toolbar "Georeference" über "Imagery" ► "Georeference" aktivieren. Es öffnet sich automatisch die richtige Toolbar.
+            </p>
+            <a target="_blank" href="Georef_1.png">
+                <img src="Georef_1.png" alt="Georef_1" >
+            </a>
+            <br>
+            <br>
+            <p>
+                <b>Schritt 4:</b><br>
+                Kartenausschnitt auf Bereich einstellen, in dem die Passpunkte erfasst werden sollen und die Ausgangsdaten mit "Fit ti Display" in diesem Bereich verschieben. Mithilfe von "Move", "Scale" und "Rotate" lässt sich der Ausgangsdatenbestand bereits gut an den Kartenausschnitt anpassen. 
+            </p>
+            <a target="_blank" href="Georef_2.png">
+                <img src="Georef_2.png" alt="Georef_2" >
+            </a>
+            <br>
+            <br>
+            <p>
+                <b>Schritt 5:</b><br>
+                Passpunkte mittel "Add Control Points" hinzufügen. Zuerst in den Ausgangsdaten, anschließend in den Referenzdaten.<br>
+                Mithilfe der "Control Point Table" lassen sich die einzelnen Passpunkte nochmals anzeigen und ggf. wieder löschen. (Man kann das Häkchen nebst einem Passpunkt entfernen und schauen, ob die Georeferenzierung ggf. besser wird. Sollte dies der Fall sein, so ist es förderlich diesen Passpunkt zu löschen und einen neuen zu setzen.)
+            </p>
+            <a target="_blank" href="Georef_3.png">
+                <img src="Georef_3.png" alt="Georef_3" >
+            </a>
+            <br>
+            <br>
+            <p>
+                <b>Schritt 6:</b><br>
+                Ergebnis sichern.<br>
+                "Save": Ergebnis wird direkt im aktuellen Projekt gespeichert. Dadurch wird die Original-Bild-Datei nicht verändert, sondern die nötige Bild-Transformation permanent im Projekt angewendet.<br>
+                "Save as New": Ergebnis der Georeferenzierung wird in einer neuen Datei gespeichert und kann in anderen Projekten oder anderer Software verwendet werden.
+            </p>
+            <a target="_blank" href="Georef_4.png">
+                <img src="Georef_4.png" alt="Georef_4" >
+            </a>
+            <br>
+            <br>
     </div>
     <div>
         <h2 id="extract">Ordner Extrahieren</h2>
