@@ -79,6 +79,7 @@ p {
             <li><a href="#basisFunctionAttribute">FeatureClass - Attribute hinzufügen</a></li>
             <li><a href="#basisFunctionEdit">Editieren</a></li>
             <li><a href="#basisFunctionGeoreference">Georeferenzierung</a></li>
+            <li><a href="#basisFunctionJoin">Erstellen eines Join</a></li>
           </ul>
         </li>
         <li><a href="#layout">Layout gestalten</a></li>
@@ -415,6 +416,58 @@ p {
         <br>
         <br>
       </div>
+      <div>
+        <h3 id="basisFunctionJoin">Erstellen eines Join</h3>
+   
+        <p>„Join“: Verbinden von Tabellen<br>
+          Anmerkung: Der Join ist nur temporär, das heißt wenn man den Layer in ein anderes Projekt lädt ist die Verbindung zu der anderen Tabelle nicht mehr vorhanden und müsste neu gesetzt werden.<br>
+          <b>Vorbereitung:</b><br>
+          Ggf. zu joinende Tabelle erstellen oder formatieren. Es ist sicherzustellen, dass beide Tabellen ((Attribut-)Tabelle des Layers und die zu verbindende Tabelle (oft CSV- oder Excel-Tabelle)) über ein eindeutiges Attribut verfügen, dass jeweils vorhanden ist. Anhand dessen kann man letztlich die beiden Tabellen miteinander verknüpfen.
+        </p>
+        <a target="_blank" href="Join_2_attributtabelle.png">
+          <img src="Join_2_attributtabelle.png" alt="Join_2_attributtabelle" >
+        </a>
+        <br>
+         <a target="_blank" href="Join_2_exceltabelle.png">
+          <img src="Join_2_exceltabelle.png" alt="Join_2_exceltabelle" >
+        </a>
+        <br>
+        <br>
+        <p>
+          <b>Schritt 1:</b><br>
+          Aufrufen des Werkzeuges "Add Join" über einen Rechtsklick auf den ausgewählten Layer im Contentfenster ► "Joins and Relates" ► "Add Join".
+        </p>
+        <a target="_blank" href="Join_1.png">
+          <img src="Join_1.png" alt="Join_1" >
+        </a>
+        <br>
+        <br>
+        <p>
+          <b>Schritt 2:</b><br>
+          Die einzelnen Parameter des Werkzeuges mit Daten füllen und die Auswahl über das jeweilige eindeutige passende Attribut bzw. Spalte treffen. Die zu verbindende Tabelle kann mittels des Ordnersymbols über ein neues sich öffnendes Fenster ausgewählt werden. Es ist dabei zu beachten, dass eine Excel-Tabelle aus mehreren Tabellenblättern besteht. Daher muss man bis zum jeweiligen Tabellenblatt navigieren und dieses auswählen (siehe folgendes Bild). Ein Tabellenblatt ist dadurch gekennzeichnet, dass dem Tabellenblattnamen ein Dollarzeichen folgt.
+        </p>
+        <a target="_blank" href="Join_5.png">
+          <img src="Join_5.png" alt="Join_5" >
+        </a>
+        <br>
+        <a target="_blank" href="Join_3.png">
+          <img src="Join_3.png" alt="Join_3" >
+        </a>
+        <br>
+        <br>
+        <p>
+          <b>Resultat:</b><br>
+          Als Resultat erhält man eine Tabelle mit allen Informationen aus beiden vorigen verwendeten Tabellen vorausgesetzt die Attributwerte des angegebenen Attributs stimmen überein.
+        </p>
+        <a target="_blank" href="Join_4.png">
+          <img src="Join_4.png" alt="Join_4" >
+        </a>
+        <br>
+        <br>
+        <p>
+      </div>
+      
+      
       <div>
         <h2 id="layout">Layout gestalten</h2>
         <p>Um die erstellten Daten ansehnlich anzeigen zu lassen in Form einer klassischen Karte bedarf es der Erstellung eines Layouts unter Hinzunahme der jeweiligen Layer.</p>
